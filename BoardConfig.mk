@@ -8,7 +8,7 @@ USE_CAMERA_STUB := true
 
 TARGET_SPECIFIC_HEADER_PATH += device/sony/nypon/include
 
-TARGET_KERNEL_CONFIG := riogrande_nypon_defconfig
+TARGET_KERNEL_CONFIG := xperiap_defconfig
 
 COMMON_GLOBAL_CFLAGS += -DSTE_HDMI
 
