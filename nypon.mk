@@ -39,7 +39,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 # Configuration scripts
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/init.st-ericsson.device.rc:root/init.st-ericsson.device.rc \
-   device/sony/montblanc-common/prebuilt/logo-540x960.rle:root/logo.rle
+   device/sony/nypon/prebuilt/logo-540x960.rle:root/logo.rle
 
 # Configuration scripts
 PRODUCT_COPY_FILES += \
