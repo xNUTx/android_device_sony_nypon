@@ -99,4 +99,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/sony/nypon/nypon-vendor.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=275
+  ro.hwui.texture_cache_size=11 \
+  ro.hwui.layer_cache_size=9 \
+  ro.hwui.path_cache_size=3 \
+  ro.sf.lcd_density=275
