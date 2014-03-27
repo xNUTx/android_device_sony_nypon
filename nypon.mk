@@ -17,8 +17,10 @@
 # Inherit the proprietary counterpart
 $(call inherit-product-if-exists, vendor/sony/nypon/nypon-vendor.mk)
 
+# Overlays
 DEVICE_PACKAGE_OVERLAYS += device/sony/nypon/overlay
 
+# Target Device-specific Headers
 TARGET_SPECIFIC_HEADER_PATH += device/sony/nypon/include
 
 # Inherit the montblanc-common definitions
@@ -51,6 +53,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
 
+# Media Profiles
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
 
@@ -73,6 +76,12 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/flashled_param_config.cfg:system/etc/flashled_param_config.cfg \
    $(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf
 
+# Android kind of memory
+PRODUCT_PROPERTY_OVERRIDES += ro.build.characteristics=nosdcard
+
+# PC Companion kind of memory
+PRODUCT_PROPERTY_OVERRIDES += ro.semc.product.user_storage=emmc_only
+
 # NFC Support
 PRODUCT_PACKAGES += \
     libnfc \
@@ -93,9 +102,14 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
+# TWRP
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
 
+# Inhert dalvik heap values from aosp
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
+# Inhert vendor proprietary files
 $(call inherit-product-if-exists, vendor/sony/nypon/nypon-vendor.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -103,3 +117,34 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.hwui.layer_cache_size=9 \
   ro.hwui.path_cache_size=3 \
   ro.sf.lcd_density=275
+
+# Hardware video codecs configurations
+PRODUCT_PROPERTY_OVERRIDES += \
+  ste.video.dec.mpeg4.in.size=8192 \
+  ste.video.enc.out.buffercnt=5 \
+  ste.video.dec.recycle.delay=1 \
+  ste.special_fast_dormancy=false \
+  ste.video.decoder.max.hwmem=0x3600000 \
+  ste.video.decoder.max.res=1080p \
+  ste.video.decoder.h264.max.lev=4.2
+
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.service.swiqi.supported=false \
+  persist.service.swiqi.enable=0
+
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.nfc.on.default=false \
+  ro.nfc.se.sim.enable=true \
+  ro.nfc.se.smx.enable=false \
+  ro.nfc.icon.enable=true \
+  ro.nfc.vendor.name=nxp
+
+# DBUS (its removed afaik)
+#PRODUCT_PROPERTY_OVERRIDES += \
+#ste.dbus.bus.address=unix:path=/dev/socket/dbus_ste
+
+# System props for SOLS
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.semc.sols.product-code=105 \
+  ro.semc.sols.company-code=5
