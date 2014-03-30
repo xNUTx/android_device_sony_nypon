@@ -31,7 +31,12 @@ $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.google.android.nfc_extras.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -74,13 +79,27 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/button_light_curve.cfg:system/etc/button_light_curve.cfg \
    $(LOCAL_PATH)/config/cflashlib.cfg:system/etc/cflashlib.cfg \
    $(LOCAL_PATH)/config/flashled_param_config.cfg:system/etc/flashled_param_config.cfg \
-   $(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf
+   $(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf \
+   $(LOCAL_PATH)/config/dbus.conf:system/etc/dbus.conf \
+   $(LOCAL_PATH)/config/cacert.txt:system/etc/suplcert/cacert.txt
+
+# patched JB cn_binary
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/config/cn_server:system/bin/cn_server
+
+# Barometar permissions
+PRODUCT_COPY_FILES += \
+   frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml
 
 # Android kind of memory
 PRODUCT_PROPERTY_OVERRIDES += ro.build.characteristics=nosdcard
 
 # PC Companion kind of memory
 PRODUCT_PROPERTY_OVERRIDES += ro.semc.product.user_storage=emmc_only
+
+# Device specific sysmon_monitor conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/sysmon.cfg:system/etc/sysmon.cfg
 
 # NFC Support
 PRODUCT_PACKAGES += \
@@ -116,7 +135,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.hwui.texture_cache_size=11 \
   ro.hwui.layer_cache_size=9 \
   ro.hwui.path_cache_size=3 \
-  ro.sf.lcd_density=275
+  ro.sf.lcd_density=240
 
 # Hardware video codecs configurations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -141,8 +160,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.nfc.vendor.name=nxp
 
 # DBUS (its removed afaik)
-#PRODUCT_PROPERTY_OVERRIDES += \
-#ste.dbus.bus.address=unix:path=/dev/socket/dbus_ste
+PRODUCT_PROPERTY_OVERRIDES += \
+ste.dbus.bus.address=unix:path=/dev/socket/dbus_ste
 
 # System props for SOLS
 PRODUCT_PROPERTY_OVERRIDES += \
