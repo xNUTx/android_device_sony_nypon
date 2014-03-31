@@ -7,3 +7,5 @@ export BOOTREC_LED_GREEN="/sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/gree
 export BOOTREC_LED_BLUE="/sys/devices/platform/nmk-i2c.2/i2c-2/2-0040/leds/blue/brightness"
 export BOOTREC_FOTA_NODE="/dev/block/mmcblk0p13 b 179 13"
 export BOOTREC_FOTA="/dev/block/mmcblk0p13"
+
+busybox echo '200' > /sys/class/timed_output/vibrator/enable
