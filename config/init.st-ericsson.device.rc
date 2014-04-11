@@ -9,6 +9,10 @@ on boot
     chown system system /sys/class/leds/blue/delay_on
     chown system system /sys/class/leds/blue/delay_off
     chown system system /sys/class/leds/blue/delay_trigger
+    
+    # Permissions for NFC
+    chown nfc nfc /dev/pn544
+    chmod 0600 /dev/pn544
 
     # Permissions for HDMI
     chmod 666 /sys/devices/av8100_hdmi.3/disponoff
