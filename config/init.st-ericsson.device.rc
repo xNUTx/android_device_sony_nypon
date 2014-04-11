@@ -17,3 +17,15 @@ on boot
     # Permissions for HDMI
     chmod 666 /sys/devices/av8100_hdmi.3/disponoff
     chmod 666 /sys/devices/av8100_hdmi.3/hdmisdtvswitch
+
+service hdmid /system/bin/hdmid
+    class main
+    socket hdmid stream 0660 system graphics
+    oneshot
+    
+service hdmiproxyd /system/bin/hdmiproxyd
+    class main
+    user system
+    group graphics
+    socket hdmid stream 0660 system system
+    socket hdmic stream 0660 system system
