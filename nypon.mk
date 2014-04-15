@@ -20,8 +20,8 @@ $(call inherit-product-if-exists, vendor/sony/nypon/nypon-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/sony/nypon/overlay
 
-# Target Device-specific Headers
-TARGET_SPECIFIC_HEADER_PATH += device/sony/nypon/include
+# Target device Specific headers
+TARGET_SPECIFIC_HEADER_PATH := device/sony/nypon/include
 
 # Inherit the montblanc-common definitions
 $(call inherit-product, device/sony/montblanc-common/montblanc.mk)
