@@ -1,4 +1,4 @@
-#!/sbin/sh
+#!/sbin/busybox sh
 
 # trigger button-backlight
 echo '255' > /sys/class/leds/so34-led0/brightness
