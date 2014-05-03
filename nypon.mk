@@ -26,9 +26,6 @@ TARGET_SPECIFIC_HEADER_PATH := device/sony/nypon/include
 # Inherit the montblanc-common definitions
 $(call inherit-product, device/sony/montblanc-common/montblanc.mk)
 
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_eu_supl.mk)
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -81,9 +78,7 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/button_light_curve.cfg:system/etc/button_light_curve.cfg \
    $(LOCAL_PATH)/config/cflashlib.cfg:system/etc/cflashlib.cfg \
    $(LOCAL_PATH)/config/flashled_param_config.cfg:system/etc/flashled_param_config.cfg \
-   $(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf \
-   $(LOCAL_PATH)/config/dbus.conf:system/etc/dbus.conf \
-   $(LOCAL_PATH)/config/cacert.txt:system/etc/suplcert/cacert.txt
+   $(LOCAL_PATH)/config/dash.conf:system/etc/dash.conf
 
 # patched JB cn_binary
 PRODUCT_COPY_FILES += \
@@ -98,10 +93,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.build.characteristics=nosdcard
 
 # PC Companion kind of memory
 PRODUCT_PROPERTY_OVERRIDES += ro.semc.product.user_storage=emmc_only
-
-# Device specific sysmon_monitor conf
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/sysmon.cfg:system/etc/sysmon.cfg
 
 # NFC Support
 PRODUCT_PACKAGES += \
@@ -161,10 +152,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.nfc.se.smx.enable=false \
   ro.nfc.icon.enable=true \
   ro.nfc.vendor.name=nxp
-
-# DBUS (its removed afaik)
-PRODUCT_PROPERTY_OVERRIDES += \
-ste.dbus.bus.address=unix:path=/dev/socket/dbus_ste
 
 # System props for SOLS
 PRODUCT_PROPERTY_OVERRIDES += \
