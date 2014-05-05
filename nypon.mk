@@ -46,8 +46,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/fstab.st-ericsson:root/fstab.st-ericsson \
    $(LOCAL_PATH)/config/init.st-ericsson.device.rc:root/init.st-ericsson.device.rc \
-   $(LOCAL_PATH)/prebuilt/logo-540x960.rle:root/logo.rle \
-   $(LOCAL_PATH)/prebuilt/bootanimation.zip:system/media/bootanimation.zip
+   $(LOCAL_PATH)/prebuilt/logo-540x960.rle:root/logo.rle
 
 # Configuration scripts
 PRODUCT_COPY_FILES += \
