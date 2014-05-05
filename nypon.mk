@@ -114,10 +114,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-# TWRP
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
-
 # Inhert dalvik heap values from aosp
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
