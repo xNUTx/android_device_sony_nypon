@@ -154,7 +154,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.semc.sols.company-code=5
   
 # OTA Updater
-PRODUCT_PROPERTY_OVERRIDES += otaupdater.otaid=buildid
-PRODUCT_PROPERTY_OVERRIDES += otaupdater.otaver=buildver
-PRODUCT_PROPERTY_OVERRIDES += otaupdater.otatime=buildtime
+PRODUCT_PROPERTY_OVERRIDES += \
+  otaupdater.otaid=CyanogenMod-11 \
+  otaupdater.otaver=9 \
+  otaupdater.otatime=$(shell date +%s)
+
 PRODUCT_PACKAGES += OTAUpdater
