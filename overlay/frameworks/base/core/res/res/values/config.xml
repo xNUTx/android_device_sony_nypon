@@ -200,6 +200,9 @@
          kill the foreground app. -->
     <integer name="config_backKillTimeout">1000</integer>
 
+	<!-- Enable lockscreen translucent decor -->
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+ 
     <!-- Device supports LED flashlight -->
     <bool name="config_enableTorch">true</bool>
 

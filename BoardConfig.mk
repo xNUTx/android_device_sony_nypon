@@ -35,6 +35,9 @@ BOARD_HAS_NO_REAL_SDCARD := true
 BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_RECOVERY_FSTAB := device/sony/nypon/config/fstab.st-ericsson
 
+# Architecture
+TARGET_ARCH_LOWMEM := true
+
 # Partition information
 BOARD_VOLD_MAX_PARTITIONS := 16
 
