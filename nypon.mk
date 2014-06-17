@@ -155,8 +155,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
   
 # OTA Updater
 PRODUCT_PROPERTY_OVERRIDES += \
-  otaupdater.otaid=CyanogenMod-11 \
-  otaupdater.otaver=9 \
-  otaupdater.otatime=$(shell date +%s)
+  otaupdater.otaid=buildid \
+  otaupdater.otaver=buildver \
+  otaupdater.otatime=buildtime
 
 PRODUCT_PACKAGES += OTAUpdater
