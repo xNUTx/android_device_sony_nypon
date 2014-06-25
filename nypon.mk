@@ -148,6 +148,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.nfc.icon.enable=true \
   ro.nfc.vendor.name=nxp
 
+# Low ram
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
 # System props for SOLS
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.semc.sols.product-code=105 \
