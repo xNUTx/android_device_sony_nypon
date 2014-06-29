@@ -57,6 +57,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/init.st-ericsson.usb.rc:root/init.st-ericsson.usb.rc
 
+#TWRP
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/config/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Media Profiles
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
