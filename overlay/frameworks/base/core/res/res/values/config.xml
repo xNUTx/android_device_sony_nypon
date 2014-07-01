@@ -122,9 +122,10 @@
     <!-- Allow the menu hard key to be disabled in LockScreen on some devices -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
-      <!-- Flag indicating whether we should enable the automatic brightness in Settings.
+    <!-- Flag indicating whether we should enable the automatic brightness in Settings.
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
+    <bool name="config_autoBrightnessButtonKeyboard">false</bool>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">1</integer>
@@ -212,8 +213,8 @@
 
     <!-- The VoiceMail default value is displayed to my own number if it is true -->
     <bool name="config_telephony_use_own_number_for_voicemail">true</bool>
-    
-    <!-- Disable lockscreen translucent decor by default -->
+
+    <!-- Enable lockscreen translucent decor -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
     <!--  Maximum number of supported users -->
@@ -222,9 +223,6 @@
     <!-- Timeout in MS for how long you have to long-press the back key to
          kill the foreground app. -->
     <integer name="config_backKillTimeout">1000</integer>
-
-    <!-- Enable lockscreen translucent decor -->
-    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
  
     <!-- Device supports LED flashlight -->
     <bool name="config_enableTorch">true</bool>
