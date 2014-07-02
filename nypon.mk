@@ -160,10 +160,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.semc.sols.product-code=105 \
   ro.semc.sols.company-code=5
   
-# OTA Updater
-PRODUCT_PROPERTY_OVERRIDES += \
-  otaupdater.otaid=buildid \
-  otaupdater.otaver=buildver \
-  otaupdater.otatime=buildtime
-
-PRODUCT_PACKAGES += OTAUpdater
+# OpenDelta
+PRODUCT_PROPERTY_OVERRIDES += ro.delta.version=1.0
+PRODUCT_PROPERTY_OVERRIDES += ro.delta.device=nypon
+PRODUCT_PACKAGES += OpenDelta
