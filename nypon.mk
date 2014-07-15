@@ -88,10 +88,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/config/cn_server:system/bin/cn_server
 
-# Barometar permissions
-PRODUCT_COPY_FILES += \
-   frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml
-
 # Android kind of memory
 PRODUCT_PROPERTY_OVERRIDES += ro.build.characteristics=nosdcard
 
