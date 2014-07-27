@@ -124,7 +124,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.hwui.texture_cache_size=11 \
   ro.hwui.layer_cache_size=9 \
   ro.hwui.path_cache_size=3 \
-  ro.sf.lcd_density=240
+  ro.sf.lcd_density=240 \
+  ro.sf.display_rotation=0
 
 # Hardware video codecs configurations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -138,14 +139,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.service.swiqi.supported=false \
-  persist.service.swiqi.enable=0
+  persist.service.swiqi.enable=0 \
+  ste.nmf.dsp.nodump=1
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.nfc.on.default=false \
   ro.nfc.se.sim.enable=true \
   ro.nfc.se.smx.enable=false \
-  ro.nfc.icon.enable=true \
   ro.nfc.vendor.name=nxp
 
 # Low ram
