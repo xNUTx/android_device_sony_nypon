@@ -40,8 +40,8 @@ PRODUCT_COPY_FILES += \
 # currently contain all of the bitmaps at xhdpi density so
 # we do this little trick to fall back to the hdpi version
 # if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal mdpi hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Configuration scripts
 PRODUCT_COPY_FILES += \
@@ -102,9 +102,6 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
-
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
     NFCEE_ACCESS_PATH := $(LOCAL_PATH)/config/nfcee_access.xml
@@ -145,7 +142,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.nfc.on.default=false \
-  ro.nfc.se.sim.enable=true \
+  ro.nfc.se.sim.enable=false \
   ro.nfc.se.smx.enable=false \
   ro.nfc.vendor.name=nxp
 
