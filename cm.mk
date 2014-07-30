@@ -25,6 +25,9 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
+# Screen
+TARGET_SCREEN_HEIGHT := 960
+TARGET_SCREEN_WIDTH := 540
 
 #Sony Apps in play store
 PRODUCT_GMS_CLIENTID_BASE := android-sonyericsson
