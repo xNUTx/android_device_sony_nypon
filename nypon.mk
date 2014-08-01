@@ -141,18 +141,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.nfc.on.default=false \
-  ro.nfc.se.sim.enable=false \
-  ro.nfc.se.smx.enable=false \
   ro.nfc.vendor.name=nxp
 
 # Low ram
-PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
-
-# System props for SOLS
-PRODUCT_PROPERTY_OVERRIDES += \
-  ro.semc.sols.product-code=105 \
-  ro.semc.sols.company-code=5
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=false
 
 #Kernel modules
 PRODUCT_COPY_FILES += \
