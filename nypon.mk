@@ -98,6 +98,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.semc.product.user_storage=emmc_only
 PRODUCT_PACKAGES += \
     libnfc \
     libnfc_jni \
+    libnfc_ndef \
     Nfc \
     Tag \
     com.android.nfc_extras
