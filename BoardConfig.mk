@@ -8,7 +8,8 @@
 TARGET_SPECIFIC_HEADER_PATH += device/sony/nypon/include
 
 # Kernel Config
-TARGET_KERNEL_CONFIG := xperiap_defconfig
+#TARGET_KERNEL_CONFIG := xperiap_defconfig
+TARGET_PREBUILT_KERNEL := device/sony/jlo/kernel
 
 #HDMI
 COMMON_GLOBAL_CFLAGS += -DSTE_HDMI
